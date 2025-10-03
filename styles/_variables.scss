@@ -1,0 +1,34 @@
+@use 'helpers' as *;
+
+:root {
+  --color-white: #ffffff;
+  --color-light: #F9F9F9;
+  --color-gray: #606060;
+  --color-dark-gray: #ACADB9;
+  --color-light-gray: #201F1F;
+  --color-accent: #6C5FBC;
+  --color-orange: #FBAD18;
+  --color-orange-alter: #DAA31A;
+  --color-orange-faded: #F7EDD0;
+  --color-red: #F1534E;
+  --color-red-alter: #FB471D;
+  --color-red-faded: #F7C5BA;
+  --color-green: #309D5B;
+  --color-green-faded: #33AC64;
+
+  --opacity-percentage: 20%;
+
+  --font-family-base: 'Inter' , sans-serif;
+  --font-family-accent: 'Poppins' , sans-serif;
+  --font-family-accent-alter: 'Manrope' , sans-serif;
+  --font-family-intermediate: 'Public Sans' , sans-serif;
+
+  --transition-duration: 0.2s;
+
+  --container-width: #{rem(1288)};
+  --container-padding-x: #{rem(19)};
+
+  --border: 1px solid #cbcbcb;
+
+  --letter-spacing: 3%;
+}

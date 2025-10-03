@@ -1,0 +1,9 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+html {
+  color: var(--color-accent);
+}
