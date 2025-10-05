@@ -1,0 +1,35 @@
+@use '../../helpers' as *;
+
+.soc1als {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+
+  &-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(70);
+    height: rem(70);
+
+    @include tablet {
+      width: rem(56);
+      height: rem(56);
+    }
+
+    @include mobile {
+      width: rem(42);
+      height: rem(42);
+    }
+
+    @include mobile-s {
+      width: rem(38);
+      height: rem(38);
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

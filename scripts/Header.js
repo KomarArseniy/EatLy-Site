@@ -8,7 +8,6 @@ class Header {
 
     stateClasses = {
         isActive: 'is-active',
-        isLock: 'is-lock',
     }
 
     constructor() {
@@ -35,7 +34,6 @@ class Header {
     openBurgerMenu() {
         this.openBurgerMenuButtonElement.classList.toggle(this.stateClasses.isActive);
         this.overlayElement.classList.toggle(this.stateClasses.isActive);
-        document.documentElement.classList.toggle(this.stateClasses.isLock);
     }
 
     onOpenBurgerButtonClick = () => {
@@ -50,7 +48,6 @@ class Header {
         this.closeBurgerMenuButtonElement.classList.remove(this.stateClasses.isActive);
         this.openBurgerMenuButtonElement.classList.remove(this.stateClasses.isActive);
         this.overlayElement.classList.remove(this.stateClasses.isActive);
-        document.documentElement.classList.remove(this.stateClasses.isLock);
     }
 
     onCloseBurgerButtonClick = () => {
@@ -60,13 +57,13 @@ class Header {
     onResize = () => {
         clearTimeout(this.resizeTimer);
 
-        this.resizeTimer = setTimeout(() => {
+        // this.resizeTimer = setTimeout(() => {
             this.positionOverlayMenu();
-
-            if (window.innerWidth >= 768) {
-                this.closeBurgerMenu();
-            }
-        }, 300)
+        //
+        //     if (window.innerWidth >= 768) {
+        //         this.closeBurgerMenu();
+        //     }
+        // }, 300)
     }
 
     onDocumentClick = () => {

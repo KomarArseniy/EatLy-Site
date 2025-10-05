@@ -1,4 +1,4 @@
-@use '../helpers' as *;
+@use '../../helpers/index' as *;
 
 .burger-close-button {
   @include square(rem(25));

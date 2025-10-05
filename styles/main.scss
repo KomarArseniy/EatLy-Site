@@ -4,8 +4,15 @@
 @use 'utils';
 @use 'globals';
 
-@use './blocks/header.scss';
-@use './blocks/logo.scss';
-@use './blocks/burger-button.scss';
-@use './blocks/base-link.scss';
-@use './blocks/button.scss';
+@use 'blocks/header/header.scss';
+@use 'blocks/shared_blocks/logo.scss';
+@use 'blocks/header/burger-button.scss';
+@use 'blocks/shared_blocks/base-link.scss';
+@use 'blocks/shared_blocks/button.scss';
+
+@use 'blocks/footer/footer.scss';
+@use 'blocks/shared_blocks/soc1als.scss';
+
+.header {
+  //display: none !important;
+}

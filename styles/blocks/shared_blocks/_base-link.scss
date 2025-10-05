@@ -1,7 +1,8 @@
-@use '../helpers' as *;
+@use '../../helpers/index' as *;
 
 .base-link {
   $padding-link-x: 18;
+  @include fluid-text(20,14);
 
   padding: rem(7) rem($padding-link-x);
   border-radius: rem(7);
