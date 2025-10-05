@@ -3,15 +3,21 @@
 body {
   @include fluid-text(18,14);
   font-family: var(--font-family-base);
+  font-weight: 500;
 
   color: var(--color-gray);
 
   display: flex;
   flex-direction: column;
+  background-color: var(--color-light);
 }
 
 main {
   flex-grow: 1;
+}
+
+html.is-lock {
+  overflow: hidden;
 }
 
 h1, .h1,
@@ -38,10 +44,11 @@ a,
 button,
 label,
 textarea,
-select, input
+select, input,
 {
   transition-duration: var(--transition-duration);
 }
+
 
 a {
   color: inherit;
@@ -73,4 +80,3 @@ button {
     }
   }
 }
-

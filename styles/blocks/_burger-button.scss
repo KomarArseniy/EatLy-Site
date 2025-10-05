@@ -1,0 +1,31 @@
+@use '../helpers' as *;
+
+.burger-close-button {
+  @include square(rem(25));
+  color: var(--color-light-gray);
+  display: flex;
+  position: relative;
+  cursor: pointer;
+
+  &__line {
+    border-radius: rem(15);
+    padding: rem(3);
+    @include abs-center;
+    width: 100%;
+    height: rem(2);
+    background-color: currentColor;
+
+    &:first-child {
+      rotate: 45deg;
+    }
+    &:last-child {
+      rotate: -45deg;
+    }
+  }
+
+  &::after {
+    content: '';
+    @include square(rem(40));
+    @include abs-center;
+  }
+}

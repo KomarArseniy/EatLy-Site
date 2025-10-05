@@ -1,0 +1,30 @@
+@use '../helpers' as *;
+
+.button {
+  padding: fluid(17, 9) fluid(26,15);
+  font-weight: 700;
+  border: var(--border-2px-transparent);
+  border-radius: rem(13);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  min-width: rem(121);
+
+
+  @include hover {
+    background-color: var(--color-white);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  @include tablet {
+    min-width: rem(86);
+  }
+
+  &--accent {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+
+  }
+}

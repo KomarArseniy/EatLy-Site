@@ -1,0 +1,25 @@
+@use '../helpers' as *;
+
+.base-link {
+  $padding-link-x: 18;
+
+  padding: rem(7) rem($padding-link-x);
+  border-radius: rem(7);
+  border: var(--border-2px-transparent);
+
+  @include hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  @include tablet {
+    $padding-link-x: 12;
+    padding: rem(5) rem($padding-link-x);
+  }
+
+  @include mobile {
+    $padding-link-x: 8;
+    padding: rem(5) rem($padding-link-x);
+
+  }
+}

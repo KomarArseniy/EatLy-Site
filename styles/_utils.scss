@@ -21,3 +21,17 @@
     display: none !important;
   }
 }
+
+.full-width-line-wn-paddings {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: var(--container-padding-x);
+    width: calc(100% - var(--container-padding-x) * 2);
+    height: 1px;
+    background-color: var(--color-gray-border);
+    bottom:0;
+  }
+}

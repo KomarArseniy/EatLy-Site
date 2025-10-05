@@ -4,6 +4,8 @@
 @use 'utils';
 @use 'globals';
 
-html {
-  color: var(--color-accent);
-}
+@use './blocks/header.scss';
+@use './blocks/logo.scss';
+@use './blocks/burger-button.scss';
+@use './blocks/base-link.scss';
+@use './blocks/button.scss';
