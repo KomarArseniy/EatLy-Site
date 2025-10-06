@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     row-gap: rem(57);
-    padding-block: fluid(90,55) fluid(80,36);
+    padding-block: fluid(75,45) fluid(60,30);
 
     @include mobile {
       display: grid;

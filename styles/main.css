@@ -721,7 +721,7 @@ button[aria-label]::before {
   display: flex;
   flex-direction: column;
   row-gap: 3.5625rem;
-  padding-block: clamp(3.4375rem, 2.625rem + 3.3333333333vw, 5.625rem) clamp(2.25rem, 1.2285714286rem + 4.1904761905vw, 5rem);
+  padding-block: clamp(2.8125rem, 2.1160714286rem + 2.8571428571vw, 4.6875rem) clamp(1.875rem, 1.1785714286rem + 2.8571428571vw, 3.75rem);
 }
 @media (width <= 47.99875rem) {
   .footer__inner {
@@ -840,6 +840,14 @@ button[aria-label]::before {
 .soc1als-link svg {
   width: 100%;
   height: auto;
+}
+
+.header {
+  display: none !important;
+}
+
+.footer {
+  display: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */
