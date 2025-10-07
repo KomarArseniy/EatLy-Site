@@ -1,0 +1,63 @@
+@use '../../../helpers' as *;
+
+.tabs {
+  display: grid;
+  row-gap: fluid(25,12);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    column-gap: rem(5);
+    padding-inline: rem(12);
+  }
+
+  &__tab {
+    font-size: rem(10);
+    background-color: transparent;
+    border: var(--border-2px-transparent);
+    border-radius: 1rem;
+    padding: rem(3) rem(5);
+    color: #828282;
+
+    @include tablet {
+      font-size: rem(7);
+    }
+
+    @include hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    &.is-active {
+      border-color: var(--color-accent);
+      background-color: var(--color-accent);
+      color: var(--color-light);
+      pointer-events: none;
+    }
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  &__content {
+    width: 100%;
+
+    svg {
+      position: relative;
+      z-index: 1;
+      color: var(--color-accent);
+      max-width: 100%;
+      height: auto;
+
+      & > line {
+        color: var(--color-gray);
+        opacity: 10%;
+      }
+      & > text {
+        color: var(--color-white);
+      }
+    }
+
+  }
+}

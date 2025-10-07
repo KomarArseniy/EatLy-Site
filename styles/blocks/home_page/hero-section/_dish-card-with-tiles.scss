@@ -1,0 +1,56 @@
+@use '../../../helpers' as *;
+
+.dish-card-with-tiles {
+  position: relative;
+
+  &__background {
+    @include abs-center;
+    background-color: var(--color-accent);
+    width: rem(430);
+    height: rem(430);
+    border-radius: 50%;
+
+    @include tablet {
+      width: rem(360);
+      height: rem(360);
+    }
+
+    @include mobile {
+      width: rem(250);
+      height: rem(250);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      translate: 0 -50%;
+      width: rem(101);
+      height: rem(98);
+      background: url('../../../../icons/arrow.svg') center center no-repeat;
+
+      @include tablet {
+        left: -6%;
+        top: 32%;
+        transform: scaleX(-1);
+      }
+    }
+
+    &-image {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      translate: -50% -50%;
+
+      @include tablet {
+        width: rem(345);
+        height: rem(345);
+      }
+      @include mobile {
+        width: rem(235);
+        height: rem(235);
+      }
+    }
+  }
+}

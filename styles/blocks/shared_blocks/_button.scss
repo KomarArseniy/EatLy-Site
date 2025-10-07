@@ -11,7 +11,6 @@
   white-space: nowrap;
   min-width: rem(121);
 
-
   @include hover {
     background-color: var(--color-white);
     border-color: var(--color-accent);
@@ -25,6 +24,16 @@
   &--accent {
     background-color: var(--color-accent);
     color: var(--color-light);
+  }
 
+  &--with-border {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+
+    @include hover {
+      color: var(--color-gray);
+      border-color: var(--color-gray);
+      background-color: var(--color-white);
+    }
   }
 }

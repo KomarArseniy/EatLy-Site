@@ -1,0 +1,26 @@
+@use '../../helpers' as *;
+
+.rating-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: rem(4);
+
+  &__star {
+    svg {
+      display: block; /* Убирает лишнее пространство под inline-элементом */
+      width: 17px;    /* Явно задай размер */
+      height: 16px;
+    }
+
+    @include mobile {
+      & > svg {
+        width: rem(12);
+        height: rem(12);
+      }
+    }
+    &.is-active {
+      color: var(--color-yellow);
+    }
+  }
+}

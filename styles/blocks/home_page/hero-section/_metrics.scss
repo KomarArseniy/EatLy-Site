@@ -1,0 +1,139 @@
+@use '../../../helpers' as *;
+
+.metrics {
+  padding-block: rem(55);
+  display: flex;
+  justify-content: center;
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+
+  &__list {
+    display: flex;
+    @include mobile {
+      display: grid;
+    }
+    //overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      width: 100vw;
+      height: 100%;
+      background-color: var(--color-accent);
+      bottom: 0;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+      box-sizing: content-box;
+      max-width: rem(260);
+      --padding-x : #{rem(50)};
+
+      @include tablet {
+        --padding-x : #{rem(25)};
+      }
+
+      &:not(:first-child) {
+        @include mobile-above {
+          padding-left: var(--padding-x);
+          border-left: 2px solid #C5C5C50E;
+        }
+
+        @include mobile {
+          padding-top: var(--padding-x);
+        }
+      }
+
+      &:not(:last-child) {
+        @include mobile-above {
+          padding-right: var(--padding-x);
+        }
+
+        @include mobile {
+          padding-bottom: var(--padding-x);
+          border-bottom: 2px solid #C5C5C50E;
+        }
+      }
+
+      &:first-child {
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          right: 43%;
+          bottom: 0;
+          width: 100% ;
+          height: 100%;
+          z-index: -1;
+          background: center / contain no-repeat url('../../../../icons/12.svg');
+        }
+
+        &::after {
+          right: 38%;
+        }
+
+        @include mobile {
+          &::before{
+            right: 30%;
+            top: -30%;
+            transform: rotate(90deg);
+          }
+          &::after  {
+            right: 25%;
+            top: -23%;
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      &:last-child  {
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          background: center / contain no-repeat url('../../../../icons/13.svg');
+        }
+        &::after {
+          left:47%;
+        }
+
+        @include mobile {
+          &::before,
+          &::after {
+            height: 60%;
+          }
+          &::before{
+            top: 70%;
+            transform: rotate(10deg);
+          }
+          &::after  {
+            top: 60%;
+            transform: rotate(10deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__key {
+    color: #C5BFED;
+  }
+
+  &__value {
+    font-size: rem(44);
+    font-family: var(--font-family-intermediate);
+    @include tablet {
+      font-size: rem(31);
+    }
+  }
+}

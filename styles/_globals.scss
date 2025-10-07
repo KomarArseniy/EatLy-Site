@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--color-light);
+  //overflow-x: hidden;
 }
 
 main {
@@ -22,9 +23,11 @@ html.is-lock {
 
 h1, .h1,
 h2, .h2,
-h3, .h3 {
+h3, .h3,
+h4, .h4 {
   font-family: var(--font-family-accent);
   line-height: 1.2;
+  color: var(--color-dark);
 }
 
 h1, .h1 {
@@ -38,6 +41,10 @@ h2, .h2 {
 
 h3, .h3 {
   @include fluid-text(26,21);
+}
+
+h4, .h4 {
+  font-size: fluid(22, 16);
 }
 
 a,
