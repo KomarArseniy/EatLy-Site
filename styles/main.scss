@@ -13,14 +13,9 @@
 @use 'blocks/footer/footer.scss';
 @use 'blocks/shared_blocks/soc1als.scss';
 
-@use 'blocks/home_page/hero-section/graphic-tile.scss';
 @use 'blocks/home_page/hero-section/hero.scss';
 @use 'blocks/home_page/hero-section/metrics.scss';
-@use 'blocks/home_page/hero-section/tabs.scss';
 
-@use 'blocks/home_page/shared/dish-tile.scss';
-@use 'blocks/home_page/shared/tile.scss';
-@use 'blocks/home_page/hero-section/dish-card-with-tiles.scss';
 @use 'blocks/shared_blocks/rating-view.scss';
 
 .header {

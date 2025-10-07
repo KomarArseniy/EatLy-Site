@@ -6,10 +6,12 @@
   }
 
   &__main {
-    padding-top: rem(100);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: rem(37);
+    @include mobile-above {
+      padding-top: rem(100);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: rem(37);
+    }
 
     @include tablet {
       padding-top: rem(60);
@@ -17,16 +19,19 @@
     }
 
     @include mobile {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       row-gap: rem(45);
-      justify-items: center;
+      justify-content: center;
+      align-items: center;
     }
   }
 
   &__body {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     row-gap: rem(38);
+
 
     @include tablet {
       row-gap: rem(30);
@@ -38,6 +43,9 @@
   }
 
   &__dish {
+    & > img {
+      object-fit: cover;
+    }
   }
 
   &__info {
