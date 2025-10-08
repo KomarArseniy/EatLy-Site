@@ -1,0 +1,25 @@
+@use '../../helpers/index' as *;
+
+.image-container {
+  display: inline-block;
+  position: relative;
+
+  &--top-right-ico {
+
+    &::after {
+      position: absolute;
+      z-index: -1;
+      content: '';
+      right: calc(-1 * #{rem(30)});
+      top: calc(-1 * #{rem(20)});
+      @include square(rem(35));
+      background-image: url('../../../icons/vapor.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include mobile {
+        @include square(rem(25));
+      }
+    }
+  }
+}

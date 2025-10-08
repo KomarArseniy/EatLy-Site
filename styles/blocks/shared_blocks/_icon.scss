@@ -1,0 +1,30 @@
+@use '../../helpers/index' as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  column-gap: rem(10);
+
+  &::after {
+    content: '';
+    --size: #{rem(20)};
+    flex-shrink: 0;
+
+    @include square(var(--size));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all var(--transition-duration) ease; // ← добавляем сюда для всех иконок
+
+    @include tablet {
+      --size: #{rem(16)};
+    }
+  }
+
+
+  &--white-arrow {
+    &::after {
+      background-image: url('../../../icons/white-arrow.svg');
+    }
+  }
+}

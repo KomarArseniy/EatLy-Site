@@ -1,0 +1,15 @@
+@use '../../helpers/index' as *;
+
+.section {
+
+  padding-block: rem(100) rem(116);
+  border-bottom: var(--border-gray);
+
+  @include mobile {
+    padding-block: rem(60);
+  }
+
+  &--without-border-bottom {
+    border-bottom: none;
+  }
+}

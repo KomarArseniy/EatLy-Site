@@ -16,12 +16,21 @@
 @use 'blocks/home_page/hero-section/hero.scss';
 @use 'blocks/home_page/hero-section/metrics.scss';
 
+@use 'blocks/home_page/advantages-section/advantages.scss';
+@use 'blocks/shared_blocks/section.scss';
+
 @use 'blocks/shared_blocks/rating-view.scss';
+@use 'blocks/shared_blocks/icon.scss';
+@use 'blocks/shared_blocks/image-container';
 
 .header {
-  //display: none !important;
+  display: none !important;
 }
 
 .footer {
-  //display: none !important;
+  display: none !important;
+}
+
+.main > *:not(:last-child) {
+    display: none !important;
 }

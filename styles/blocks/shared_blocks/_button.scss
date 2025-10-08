@@ -21,9 +21,22 @@
     min-width: rem(86);
   }
 
+  &--thin {
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+  }
+
   &--accent {
     background-color: var(--color-accent);
     color: var(--color-light);
+
+    &-with-icon {
+      @include hover {
+        .icon--white-arrow::after {
+          background-image: url('../../../icons/accent-arrow.svg');
+        }
+      }
+    }
   }
 
   &--with-border {
@@ -31,9 +44,11 @@
     color: var(--color-accent);
 
     @include hover {
-      color: var(--color-gray);
-      border-color: var(--color-gray);
+      color: var(--color-dark);
+      border-color: var(--color-dark);
       background-color: var(--color-white);
+      opacity: 90%;
     }
   }
+
 }
