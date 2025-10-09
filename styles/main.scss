@@ -4,24 +4,29 @@
 @use 'utils';
 @use 'globals';
 
-@use 'blocks/header/header.scss';
-@use 'blocks/shared_blocks/logo.scss';
+@use 'blocks/footer/footer.scss';
+
 @use 'blocks/header/burger-button.scss';
+@use 'blocks/header/header.scss';
+
+@use 'blocks/shared_blocks/logo.scss';
 @use 'blocks/shared_blocks/base-link.scss';
 @use 'blocks/shared_blocks/button.scss';
-
-@use 'blocks/footer/footer.scss';
 @use 'blocks/shared_blocks/soc1als.scss';
-
-@use 'blocks/home_page/hero-section/hero.scss';
-@use 'blocks/home_page/hero-section/metrics.scss';
-
-@use 'blocks/home_page/advantages-section/advantages.scss';
 @use 'blocks/shared_blocks/section.scss';
-
 @use 'blocks/shared_blocks/rating-view.scss';
 @use 'blocks/shared_blocks/icon.scss';
 @use 'blocks/shared_blocks/image-container';
+@use 'blocks/shared_blocks/division-badge.scss';
+@use 'blocks/shared_blocks/card.scss';
+@use 'blocks/shared_blocks/grid.scss';
+@use 'blocks/shared_blocks/restaurant-card.scss';
+
+@use 'blocks/shared_sections/restaurants-section/restaurants.scss';
+
+@use 'blocks/home_page/hero-section/hero.scss';
+@use 'blocks/home_page/hero-section/metrics.scss';
+@use 'blocks/home_page/advantages-section/advantages.scss';
 
 .header {
   display: none !important;
@@ -34,3 +39,5 @@
 .main > *:not(:last-child) {
     display: none !important;
 }
+
+//!!! BUG WITH OVERLAY-MENU (HEADER)

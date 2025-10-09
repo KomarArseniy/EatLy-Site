@@ -27,4 +27,10 @@
       background-image: url('../../../icons/white-arrow.svg');
     }
   }
+
+  &--gray-arrow {
+    &::after {
+      background-image: url('../../../icons/gray-arrow.svg');
+    }
+  }
 }

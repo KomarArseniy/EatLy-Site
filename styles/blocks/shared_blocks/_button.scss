@@ -39,6 +39,15 @@
     }
   }
 
+  &--gray {
+    color: var(--color-light-gray);
+
+    @include hover {
+      color: var(--color-dark);
+      border: 2px solid var(--color-light-gray);
+    }
+  }
+
   &--with-border {
     border-color: var(--color-accent);
     color: var(--color-accent);

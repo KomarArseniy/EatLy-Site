@@ -1,0 +1,30 @@
+@use '../../helpers' as *;
+
+.card {
+  border-radius: rem(30);
+  background-color: var(--color-white);
+  box-shadow: 6px 71px 36px 0 rgba(229, 229, 229, 0.7);
+
+  &__reviews {
+    display: flex;
+    column-gap: rem(10);
+
+    font-family: var(--font-family-accent-alter);
+    @include fluid-text(20,14);
+    font-weight: 400;
+    color: var(--color-light-gray);
+
+    &-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: rem(6);
+      &::before {
+        content: '';
+        @include square(rem(25));
+        background-image: url('../../../icons/purple-star.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

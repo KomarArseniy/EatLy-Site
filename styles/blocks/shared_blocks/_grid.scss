@@ -1,0 +1,26 @@
+@use '../../helpers' as *;
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  column-gap: rem(30);
+
+  @include tablet {
+    column-gap: rem(20);
+  }
+
+  &__item {
+    align-self: start;
+  }
+
+  &--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(40);
+    }
+  }
+}

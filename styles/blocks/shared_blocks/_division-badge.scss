@@ -1,0 +1,19 @@
+@use '../../helpers' as *;
+
+.division-badge {
+  padding: rem(5) rem(8);
+  border-radius: rem(6);
+  align-self: start;
+  font-family: var(--font-family-accent);
+  font-weight: 400;
+
+  &--yellow {
+    background-color: var(--color-orange-faded);
+    color: var(--color-orange-alter);
+  }
+
+  &--red {
+    background-color: var(--color-red-faded);
+    color: var(--color-red-alter);
+  }
+}
