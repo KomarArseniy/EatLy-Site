@@ -1,0 +1,67 @@
+@use '../../helpers/index' as *;
+
+.dish-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(10);
+  padding: rem(20) rem(23);
+  position: relative;
+
+  @include mobile {
+    padding: rem(12) rem(14);
+  }
+
+  &__like-button {
+    position: absolute;
+    top:rem(10);
+    right:rem(10);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(5);
+  }
+
+  &__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(13);
+
+    @include mobile {
+      row-gap: rem(7);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8);
+
+    &-title {
+      color: var(--color-dark);
+      font-weight: 600;
+      @include fluid-text(23,16);
+    }
+  }
+
+  &__cost-wrapper {
+    display: flex;
+    column-gap: rem(10);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__cost {
+    color: var(--color-dark);
+    @include fluid-text(23,16);
+    font-family: var(--font-family-accent-alter);
+    font-weight: 700;
+
+    &-pennies {
+    color: var(--color-light-gray);
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+  }
+}

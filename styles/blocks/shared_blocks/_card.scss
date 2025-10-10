@@ -7,7 +7,7 @@
 
   &__reviews {
     display: flex;
-    column-gap: rem(10);
+    column-gap: rem(5);
 
     font-family: var(--font-family-accent-alter);
     @include fluid-text(20,14);

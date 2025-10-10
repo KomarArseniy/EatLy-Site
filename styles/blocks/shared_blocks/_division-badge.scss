@@ -16,4 +16,9 @@
     background-color: var(--color-red-faded);
     color: var(--color-red-alter);
   }
+
+  &--green {
+    color: var(--color-green);
+    background-color: var(--color-green-faded);
+  }
 }

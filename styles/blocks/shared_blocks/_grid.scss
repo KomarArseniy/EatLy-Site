@@ -23,4 +23,16 @@
       row-gap: rem(40);
     }
   }
+  &--5-cols {
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: rem(30);
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+      //row-gap: rem(40);
+    }
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }

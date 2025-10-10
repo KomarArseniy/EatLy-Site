@@ -1,0 +1,42 @@
+@use '../../helpers/index' as *;
+
+.cards {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(85);
+
+    @include tablet {
+      row-gap: rem(71);
+    }
+
+    @include mobile {
+      row-gap: rem(55);
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(62);
+
+    @include mobile {
+      row-gap: rem(30);
+    }
+
+    & a.button {
+      align-self: flex-end;
+
+      @include mobile {
+        align-self: center;
+      }
+    }
+
+    & > a.button {
+      @include mobile {
+        width: 70%;
+        max-width: rem(200);
+      }
+    }
+  }
+}

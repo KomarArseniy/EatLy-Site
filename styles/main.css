@@ -312,7 +312,7 @@ svg * {
   --color-red-alter: #FB471D;
   --color-red-faded: #F7C5BA;
   --color-green: #309D5B;
-  --color-green-faded: #33AC64;
+  --color-green-faded: #33AC6414;
   --opacity-percentage: 20%;
   --font-family-base: "Inter" , sans-serif;
   --font-family-accent: "Poppins" , sans-serif;
@@ -1014,6 +1014,10 @@ button[aria-label]::before {
   background-color: var(--color-red-faded);
   color: var(--color-red-alter);
 }
+.division-badge--green {
+  color: var(--color-green);
+  background-color: var(--color-green-faded);
+}
 
 .card {
   border-radius: 1.875rem;
@@ -1022,7 +1026,7 @@ button[aria-label]::before {
 }
 .card__reviews {
   display: flex;
-  column-gap: 0.625rem;
+  column-gap: 0.3125rem;
   font-family: var(--font-family-accent-alter);
   font-size: clamp(0.875rem, 0.7357142857rem + 0.5714285714vw, 1.25rem);
   font-weight: 400;
@@ -1064,6 +1068,20 @@ button[aria-label]::before {
     display: flex;
     flex-direction: column;
     row-gap: 2.5rem;
+  }
+}
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 1.875rem;
+}
+@media (width <= 63.99875rem) {
+  .grid--5-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width <= 47.99875rem) {
+  .grid--5-cols {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1108,24 +1126,141 @@ button[aria-label]::before {
   }
 }
 
-.restaurants__inner {
+.add-to-cart-button {
+  background-color: var(--color-dark);
+  border: none;
+  padding: 1.25rem;
+  border-radius: 0.5625rem;
+  position: relative;
+}
+@media (any-hover: hover) {
+  .add-to-cart-button:hover {
+    opacity: 0.85;
+  }
+}
+@media (any-hover: none) {
+  .add-to-cart-button:active {
+    opacity: 0.85;
+  }
+}
+@media (width <= 47.99875rem) {
+  .add-to-cart-button {
+    padding: 1rem;
+  }
+}
+.add-to-cart-button::before, .add-to-cart-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 40%;
+  height: 0.125rem;
+  background-color: var(--color-white);
+}
+.add-to-cart-button::after {
+  rotate: 90deg;
+}
+
+.dish-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.625rem;
+  padding: 1.25rem 1.4375rem;
+  position: relative;
+}
+@media (width <= 47.99875rem) {
+  .dish-card {
+    padding: 0.75rem 0.875rem;
+  }
+}
+.dish-card__like-button {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+}
+.dish-card__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3125rem;
+}
+.dish-card__info-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8125rem;
+}
+@media (width <= 47.99875rem) {
+  .dish-card__info-wrapper {
+    row-gap: 0.4375rem;
+  }
+}
+.dish-card__info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.dish-card__info-title {
+  color: var(--color-dark);
+  font-weight: 600;
+  font-size: clamp(1rem, 0.8375rem + 0.6666666667vw, 1.4375rem);
+}
+.dish-card__cost-wrapper {
+  display: flex;
+  column-gap: 0.625rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.dish-card__cost {
+  color: var(--color-dark);
+  font-size: clamp(1rem, 0.8375rem + 0.6666666667vw, 1.4375rem);
+  font-family: var(--font-family-accent-alter);
+  font-weight: 700;
+}
+.dish-card__cost-pennies {
+  color: var(--color-light-gray);
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.cards__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 5.3125rem;
 }
 @media (width <= 63.99875rem) {
-  .restaurants__inner {
+  .cards__inner {
     row-gap: 4.4375rem;
   }
 }
-.restaurants__wrapper {
+@media (width <= 47.99875rem) {
+  .cards__inner {
+    row-gap: 3.4375rem;
+  }
+}
+.cards__wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 3.875rem;
 }
-.restaurants__wrapper a.button {
+@media (width <= 47.99875rem) {
+  .cards__wrapper {
+    row-gap: 1.875rem;
+  }
+}
+.cards__wrapper a.button {
   align-self: flex-end;
+}
+@media (width <= 47.99875rem) {
+  .cards__wrapper a.button {
+    align-self: center;
+  }
+}
+@media (width <= 47.99875rem) {
+  .cards__wrapper > a.button {
+    width: 70%;
+    max-width: 12.5rem;
+  }
 }
 
 .hero__inner {

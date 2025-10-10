@@ -1,0 +1,29 @@
+@use '../../helpers/index' as *;
+
+.add-to-cart-button {
+  background-color: var(--color-dark);
+  border: none;
+  padding: rem(20);
+  border-radius: rem(9);
+  position: relative;
+
+  @include hover {
+    opacity: 0.85;
+  }
+
+  @include mobile {
+    padding: rem(16);
+  }
+
+  &::before, &::after {
+    content: '';
+    @include abs-center;
+    width: 40%;
+    height: rem(2);
+    background-color: var(--color-white);
+  }
+
+  &::after {
+    rotate: 90deg;
+  }
+}
