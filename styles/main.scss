@@ -21,15 +21,19 @@
 @use 'blocks/shared_blocks/card.scss';
 @use 'blocks/shared_blocks/grid.scss';
 @use 'blocks/shared_blocks/restaurant-card.scss';
-
+@use 'blocks/shared_blocks/select.scss';
+@use 'blocks/shared_blocks/statistic-card.scss';
+@use 'blocks/shared_blocks/dish-tile.scss';
+@use 'blocks/shared_blocks/tile.scss';
 @use 'blocks/shared_blocks/add-to-cart-button.scss';
 @use 'blocks/shared_blocks/dish-card.scss';
-
 @use 'blocks/shared_blocks/cards';
 
 @use 'blocks/home_page/hero-section/hero.scss';
 @use 'blocks/home_page/hero-section/metrics.scss';
+
 @use 'blocks/home_page/advantages-section/advantages.scss';
+@use 'blocks/home_page/purchases-section/purchases.scss';
 
 .header {
   display: none !important;

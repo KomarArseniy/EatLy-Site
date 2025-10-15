@@ -1,0 +1,46 @@
+@use '../../helpers/index' as *;
+
+.dish-tile {
+  display: flex;
+  column-gap: rem(20);
+  max-width: rem(340);
+  @include mobile {
+    min-width: rem(310);
+  }
+
+  &__image {
+    @include square(rem(75));
+  }
+
+  &__info {
+    width: 100%;
+    padding-top: rem(10);
+    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(7);
+  }
+
+  &__title {
+    font-size: fluid(20,14);
+    font-family: var(--font-family-accent);
+    font-weight: 600;
+  }
+
+  &__status-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: fluid(14,12);
+  }
+
+  &__status--red {
+    color: var(--color-red);
+  }
+
+  &__time {
+    color: var(--color-light-gray);
+    font-size: fluid(12,8);
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+}

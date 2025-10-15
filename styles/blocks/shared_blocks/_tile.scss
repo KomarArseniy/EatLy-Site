@@ -1,0 +1,7 @@
+@use '../../helpers/index' as *;
+
+.tile {
+  background-color: var(--color-white);
+  border-radius: rem(12);
+  padding: rem(6) rem(15);
+}

@@ -1,0 +1,91 @@
+@use '../../../helpers/index' as *;
+
+.purchases {
+  &__inner {
+    display: grid;
+    column-gap: rem(30);
+    grid-template-columns: auto auto;
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(40);
+    }
+  }
+
+  &__body {
+    display: flex;
+    max-width: rem(700);
+    flex-direction: column;
+    row-gap: fluid(48, 24);
+
+    @include mobile {
+      align-items: center;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    @include mobile {
+      max-width: rem(450);
+      text-align: center;
+    }
+  }
+
+  &__dishes-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(15);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: rem(45) rem(40);
+    row-gap: rem(35);
+
+    @include mobile {
+      align-self: center;
+      max-width: rem(550);
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--color-dark);
+
+      &-title {
+        font-size: rem(28);
+        font-family: var(--font-family-accent-alter);
+        font-weight: 800;
+
+        @include mobile {
+          font-size: rem(22);
+        }
+      }
+
+
+      & .select__button {
+          padding: rem(15);
+          border: var(--border-gray);
+          border-radius: rem(12);
+          background-color: #fafafa;
+
+          @include tablet {
+            padding: rem(10);
+          }
+
+          @include hover {
+            background-color: #f1f1f1;
+
+        }
+      }
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+  }
+}
