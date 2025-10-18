@@ -6,6 +6,12 @@
   row-gap: rem(13);
   overflow: hidden;
 
+  transition-duration: var(--transition-duration);
+
+  @include hover {
+    transform: translateY(rem(-20));
+  }
+
   &__content {
     padding: 0 rem(30) rem(15);
     display: flex;

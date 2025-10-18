@@ -80,6 +80,14 @@
 
 @font-face {
   font-family: 'Poppins';
+  src: url("../fonts/Manrope-ExtraBold.woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
   src: url("../fonts/Poppins-Medium.woff2");
   font-weight: 500;
   font-style: normal;

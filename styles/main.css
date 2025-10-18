@@ -269,6 +269,13 @@ svg * {
 }
 @font-face {
   font-family: "Poppins";
+  src: url("../fonts/Manrope-ExtraBold.woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
   src: url("../fonts/Poppins-Medium.woff2");
   font-weight: 500;
   font-style: normal;
@@ -1090,6 +1097,17 @@ button[aria-label]::before {
   flex-direction: column;
   row-gap: 0.8125rem;
   overflow: hidden;
+  transition-duration: var(--transition-duration);
+}
+@media (any-hover: hover) {
+  .restaurant-card:hover {
+    transform: translateY(-1.25rem);
+  }
+}
+@media (any-hover: none) {
+  .restaurant-card:active {
+    transform: translateY(-1.25rem);
+  }
 }
 .restaurant-card__content {
   padding: 0 1.875rem 0.9375rem;
@@ -1559,6 +1577,132 @@ button[aria-label]::before {
     width: 70%;
     max-width: 12.5rem;
   }
+}
+
+.discount-badge {
+  display: flex;
+  justify-content: center;
+}
+.discount-badge__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.9375rem;
+  position: relative;
+  padding: 3.4375rem 4.125rem;
+  width: 100%;
+  border-radius: 1.875rem;
+  background: var(--color-accent) url("../../../images/discount-badge-bg.png") center center no-repeat;
+  font-family: var(--font-family-accent);
+  color: var(--color-white);
+}
+@media (width <= 63.99875rem) {
+  .discount-badge__inner {
+    row-gap: 0.625rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .discount-badge__inner {
+    padding: 1.875rem 4.125rem;
+    height: 20.625rem;
+    max-width: 37.5rem;
+    align-items: center;
+  }
+}
+.discount-badge__inner::after {
+  content: "";
+  position: absolute;
+  width: 17.25rem;
+  height: 17.25rem;
+  background: url("../../../images/discount-badge-img.png") center/contain no-repeat;
+  right: 5%;
+  top: 25%;
+}
+@media (width <= 63.99875rem) {
+  .discount-badge__inner::after {
+    width: 15rem;
+    height: 15rem;
+    top: 35%;
+  }
+}
+@media (width <= 47.99875rem) {
+  .discount-badge__inner::after {
+    width: 12.5rem;
+    height: 12.5rem;
+    top: 95%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+}
+.discount-badge__title {
+  font-weight: 800;
+  font-size: 4.375rem;
+  opacity: 0.8;
+}
+@media (width <= 63.99875rem) {
+  .discount-badge__title {
+    font-size: 3.75rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .discount-badge__title {
+    font-size: 3.125rem;
+  }
+}
+.discount-badge__form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  letter-spacing: 0.0625rem;
+  font-weight: 400;
+}
+.discount-badge__form-input {
+  padding: 1.3125rem;
+  padding-right: 10.625rem;
+  width: 26.875rem;
+  border-radius: 0.9375rem;
+  border: var(--border-gray);
+  background-color: var(--color-white);
+  font-size: 1rem;
+  opacity: 80%;
+}
+@media (width <= 63.99875rem) {
+  .discount-badge__form-input {
+    width: 23.75rem;
+    padding-right: 9.375rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .discount-badge__form-input {
+    width: 20.625rem;
+    padding-right: 8.75rem;
+  }
+}
+.discount-badge__form-button {
+  position: absolute;
+  left: 17.5rem;
+  border: none;
+  border-radius: 0.6875rem;
+  padding: 0.9375rem 1.5625rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  opacity: 80%;
+}
+@media (width <= 63.99875rem) {
+  .discount-badge__form-button {
+    left: 15rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .discount-badge__form-button {
+    left: 12.5rem;
+    padding: 0.9375rem 0.9375rem;
+  }
+}
+.discount-badge__form-button--accent {
+  background-color: var(--color-accent);
+  color: #F7F8FA;
+  letter-spacing: 0.0625rem;
 }
 
 .hero__inner {
