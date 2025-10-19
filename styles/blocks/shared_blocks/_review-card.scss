@@ -1,0 +1,59 @@
+@use '../../helpers' as *;
+
+.review-card {
+  display: flex !important;
+  flex-direction: column;
+  row-gap: rem(32);
+  padding: rem(38) rem(43);
+  //max-width: rem(530);
+  width: 100%;
+  font-family: var(--font-family-accent);
+  font-style: italic;
+  position: relative;
+
+  &__header {
+    display: flex;
+    column-gap: rem(20);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      @include square(rem(60));
+      background: url('../../../icons/quotes.svg') center no-repeat;
+    }
+  }
+
+  &__image {
+    @include square(rem(70));
+    border-radius: 50%;
+    background-color: var(--color-light-gray);
+  }
+
+  &__info {
+    color: #030314;
+    font-style: normal;
+    font-weight: 500;
+    font-size: rem(21);
+  }
+
+  &__experience {
+    color: #5E5D5D;
+    font-style: normal;
+    font-weight: 400;
+    font-family: var(--font-family-accent-alter);
+    font-size: rem(17);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(30);
+
+    & > .rating-view {
+      align-self: flex-start;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@use '../../helpers/index' as *;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.swiper {
+  margin: 0 !important;
+  height: rem(346);
+
+  --swiper-pagination-color: var(--color-accent);
+  --swiper-pagination-bullet-size: #{rem(15)};
+  --swiper-pagination-bullet-width: #{rem(15)};
+  --swiper-pagination-bullet-height: #{rem(15)};
+  --swiper-pagination-bullet-horizontal-gap: #{rem(8)};
+
+  @include tablet {
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    row-gap: rem(30) !important;
+    align-items: center !important;
+    height: rem(380) !important;
+  }
+
+  .swiper-pagination {
+    left: 72% !important;
+    @include tablet {
+      //top: 110% !important;
+      height: 100%;
+      position: relative !important;
+      inset: unset !important;
+      transform: unset !important;
+    }
+  }
+
+  &-slide {
+    --local-transition-duration: 0.5s;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    border-radius: rem(20);
+    max-height: rem(238) !important;
+    opacity: 50%;
+
+    @include tablet {
+      max-width: rem(600) !important;
+    }
+
+    transition: max-height ease var(--local-transition-duration), opacity ease var(--local-transition-duration) !important;
+
+    .review-card__header,
+    .review-card__body, {
+      transition: all ease var(--local-transition-duration);
+    }
+
+    &-active {
+      opacity: 1;
+      max-height: rem(350) !important;
+      .review-card {
+        &__body {
+          color: #636363  ;
+        }
+        &__header {
+          translate: 0 0;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    &:not(.swiper-slide-active) {
+      .review-card {
+        &__body {
+          translate: 0 calc(-1 * #{rem(100)});
+        }
+        color: #969696;
+        &__header {
+          opacity: 0;
+          visibility: hidden;
+          translate: 0 calc(-1 * #{rem(100)});
+          @include tablet{
+            translate: 0 calc(-1 * #{rem(50)});
+          }
+        }
+      }
+    }
+  }
+}

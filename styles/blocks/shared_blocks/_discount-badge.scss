@@ -3,6 +3,15 @@
 .discount-badge {
   display: flex;
   justify-content: center;
+  padding-block: rem(150) rem(200);
+
+  @include tablet {
+    padding-block: rem(120) rem(160);
+  }
+
+  @include mobile {
+    padding-block: rem(100) rem(140);
+  }
 
   &__inner {
     display: flex;
@@ -88,7 +97,7 @@
 
       @include mobile {
         width: rem(330);
-        padding-right: rem(140);
+        padding-right: rem(135);
       }
     }
     &-button {

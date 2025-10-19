@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+        <title>Eatly | Home</title>
+        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="my-block">
+                <p>gfsgksdlfksdfksdlfsdklfsdlfksdlfklsdfklsdfklsdfklsdfkl</p>
+                <p>gfsgksdlfksdfksdlfsdklfsdlfksdlfklsdfklsdfklsdfklsdfkl</p>
+                <p>gfsgksdlfksdfksdlfsdklfsdlfksdlfklsdfklsdfklsdfklsdfkl</p>
+            </div>
+            <div class="my-swiper-wrapper">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 2</div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                spaceBetween: 30,
+                slidesPerView: 1,
+                speed: 500,
+                scrollbar: {
+                    el: ".swiper-scrollbar",
+                    hide: false,
+                },
+            });
+        </script>
+    </body>
+</html>
