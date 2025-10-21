@@ -28,6 +28,12 @@
     }
   }
 
+  &--bottom-accent-arrow {
+    &::after {
+      background-image: url('../../../icons/arrow-bottom.svg');
+    }
+  }
+
   &--gray-arrow {
     &::after {
       background-image: url('../../../icons/gray-arrow.svg');

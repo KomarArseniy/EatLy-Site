@@ -1,15 +1,28 @@
 @use '../../helpers' as *;
 
 .review-card {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   row-gap: rem(32);
   padding: rem(38) rem(43);
-  //max-width: rem(530);
+  border-radius: rem(20);
+  font-size: 18px;
+  background-color: var(--color-white);
+  max-width: rem(650);
   width: 100%;
   font-family: var(--font-family-accent);
   font-style: italic;
   position: relative;
+
+  @include mobile {
+    padding: rem(32);
+    row-gap: rem(25);
+  }
+
+  @include mobile-s {
+    padding: rem(20) rem(32);
+    row-gap: rem(20);
+  }
 
   &__header {
     display: flex;
@@ -22,7 +35,11 @@
       right: 0;
       top: 0;
       @include square(rem(60));
-      background: url('../../../icons/quotes.svg') center no-repeat;
+      background: url('../../../icons/quotes.svg') center/contain no-repeat;
+
+      @include mobile-s {
+        @include square(rem(50));
+      }
     }
   }
 
@@ -54,6 +71,14 @@
 
     & > .rating-view {
       align-self: flex-start;
+
+      @include mobile-s {
+        align-self: center;
+      }
     }
+  }
+
+  &__feedback {
+    text-align: left;
   }
 }

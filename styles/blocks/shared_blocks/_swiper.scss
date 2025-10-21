@@ -1,15 +1,8 @@
 @use '../../helpers/index' as *;
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 .swiper {
   margin: 0 !important;
-  height: rem(346);
+  position: relative !important;
 
   --swiper-pagination-color: var(--color-accent);
   --swiper-pagination-bullet-size: #{rem(15)};
@@ -17,50 +10,63 @@ html, body {
   --swiper-pagination-bullet-height: #{rem(15)};
   --swiper-pagination-bullet-horizontal-gap: #{rem(8)};
 
+  --swiper-min-height: #{rem(238)};
+  --swiper-active-slide-max-height: #{rem(350)};
+  --swiper-active-slide-min-height: #{rem(350)};
+
+  height: auto;
+
   @include tablet {
     overflow: visible !important;
-    display: flex !important;
-    flex-direction: column !important;
-    row-gap: rem(30) !important;
-    align-items: center !important;
-    height: rem(380) !important;
+  }
+
+  @include mobile {
+    --swiper-min-height: #{rem(200)};
+  }
+
+  @include mobile-s {
+    --swiper-min-height: #{rem(240)};
   }
 
   .swiper-pagination {
-    left: 72% !important;
-    @include tablet {
-      //top: 110% !important;
-      height: 100%;
-      position: relative !important;
-      inset: unset !important;
-      transform: unset !important;
-    }
+      left: 72% !important;
+      top: calc((var(--swiper-min-height)) + #{rem(10)}); ;
+      transform: translateX(-50%) !important;
+
+      @include tablet {
+        left: 50% !important;
+        bottom: unset !important;
+        margin-top: rem(30);
+      }
   }
 
   &-slide {
     --local-transition-duration: 0.5s;
+    word-wrap: break-word !important ;
     text-align: center;
-    font-size: 18px;
-    background: #fff;
-    border-radius: rem(20);
-    max-height: rem(238) !important;
     opacity: 50%;
 
-    @include tablet {
-      max-width: rem(600) !important;
+    .review-card {
+      //max-height: var(--swiper-min-height);
+      transition: max-height ease var(--local-transition-duration),
+      opacity ease var(--local-transition-duration),
+      min-height ease var(--local-transition-duration) !important;
     }
 
-    transition: max-height ease var(--local-transition-duration), opacity ease var(--local-transition-duration) !important;
+    @include tablet {
+      display: flex !important;
+      justify-content: center !important;
+    }
 
     .review-card__header,
-    .review-card__body, {
+    .review-card__body {
       transition: all ease var(--local-transition-duration);
     }
 
     &-active {
       opacity: 1;
-      max-height: rem(350) !important;
       .review-card {
+        min-height: var(--swiper-active-slide-min-height);
         &__body {
           color: #636363  ;
         }

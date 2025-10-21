@@ -1,0 +1,59 @@
+@use '../../helpers' as *;
+
+.expandable-content {
+  position: relative;
+  --initMaxHeight: #{rem(350)};
+  overflow: hidden ;
+
+  &.is-expanded {
+    &::after  {
+      @include hide;
+      overflow: visible ;
+      max-height: 100%;
+    }
+  }
+
+  &:not(.is-expanded) {
+    max-height: var(--initMaxHeight);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: rem(0);
+    height: 70%;
+    width: 100%;
+    background-image: linear-gradient(
+                    180deg,
+                    rgba(250,250,250,0.4) 0%,
+                    rgba(253,253,253,0.9) 90%,
+                    rgba(255,255,255,1) 100%
+    );
+  }
+
+  &__button {
+    position: absolute !important;
+    border-color: var(--color-dark);
+    font-style: normal;
+    background-color: #fff;
+    z-index: 1;
+    left: 50%;
+    bottom: rem(10);
+    transform: translateX(-50%);
+    padding: rem(10);
+    font-family: var(--font-family-accent-alter);
+    font-weight: 400;
+
+    &--open.is-expanded {
+      @include hide;
+    }
+
+    &--close:not(.is-expanded) {
+      @include hide;
+    }
+    &--close .is-expanded {
+      @include show;
+    }
+  }
+}
