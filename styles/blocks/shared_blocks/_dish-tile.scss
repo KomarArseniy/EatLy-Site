@@ -8,6 +8,13 @@
     min-width: rem(310);
   }
 
+
+  transition-duration: var(--transition-duration);
+
+  @include hover {
+    transform: translateX(rem(10));
+  }
+
   &__image {
     @include square(rem(75));
   }

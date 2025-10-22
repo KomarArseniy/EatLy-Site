@@ -9,12 +9,12 @@
     &::after  {
       @include hide;
       overflow: visible ;
-      max-height: 100%;
     }
   }
 
   &:not(.is-expanded) {
     max-height: var(--initMaxHeight);
+    overflow: hidden ;
   }
 
   &::after {
@@ -33,7 +33,7 @@
   }
 
   &__button {
-    position: absolute !important;
+    position: absolute ;
     border-color: var(--color-dark);
     font-style: normal;
     background-color: #fff;
@@ -44,15 +44,19 @@
     padding: rem(10);
     font-family: var(--font-family-accent-alter);
     font-weight: 400;
+    transition-duration: 0s;
 
     &--open.is-expanded {
       @include hide;
     }
 
     &--close:not(.is-expanded) {
+      translate: 50%;
+      scale: 0.5;
       @include hide;
     }
-    &--close .is-expanded {
+    &--close.is-expanded {
+      left: 80%;
       @include show;
     }
   }

@@ -1,10 +1,8 @@
-// Логика: кнопка должна быть в карточке с высотой > 350
-// Нужно найти все карточки такие, добавить им класс и внутрь вставить кнопку
-
 import pxToRem from './utils/pxToRem.js'
 
 const rootSelector = '.review-card';
 const maxHeight = 120;
+const maxAcceptableHeight = 300;
 
 class ExpandableContent {
     selectors = {
@@ -40,52 +38,44 @@ class ExpandableContent {
         this.bindEvents();
     }
 
-    toggleState() {
-        // Значения текущей высоты и высоты всего элемента с учетом прокручиваемой
-        // (невидимой в данный момент) области
+    showFullCard = () => {
         const { offsetHeight, scrollHeight } = this.rootElement;
+        this.rootElement.classList.add(this.stateClasses.isExpanded);
+        this.openButtonElement.classList.add(this.stateClasses.isExpanded);
+        this.closeButtonElement.classList.add(this.stateClasses.isExpanded);
 
-        if (!this.rootElement.classList.contains(this.stateClasses.isExpanded)) {
-            this.rootElement.classList.add(this.stateClasses.isExpanded);
-            this.openButtonElement.classList.add(this.stateClasses.isExpanded);
-            this.closeButtonElement.classList.add(this.stateClasses.isExpanded);
-
-            this.rootElement.classList.add(this.stateClasses.isExpanded);
-            this.rootElement.animate([
-                {
-                    maxHeight: `${pxToRem(offsetHeight)}rem`
-                },
-                {
-                    maxHeight: `${pxToRem(scrollHeight)}rem`
-                }
-            ], this.animationParams);
-        }
-        else {
-            this.rootElement.classList.remove(this.stateClasses.isExpanded);
-            this.openButtonElement.classList.remove(this.stateClasses.isExpanded);
-            this.closeButtonElement.classList.remove(this.stateClasses.isExpanded);
-
-            this.rootElement.animate([
-                {
-                    maxHeight: `${pxToRem(scrollHeight)}rem`
-                },
-                {
-                    maxHeight: `${pxToRem(maxHeight)}rem`
-                }
-            ], this.animationParams);
-        }
-
+        this.rootElement.classList.add(this.stateClasses.isExpanded);
+        this.rootElement.animate([
+            {
+                maxHeight: `${pxToRem(offsetHeight)}rem`
+            },
+            {
+                maxHeight: `${pxToRem(scrollHeight)}rem`
+            }
+        ], this.animationParams);
     }
 
-    onButtonClick = () => {
-        this.toggleState();
+    hideFullCard = () =>  {
+
+        const {  scrollHeight } = this.rootElement;
+        this.rootElement.classList.remove(this.stateClasses.isExpanded);
+        this.openButtonElement.classList.remove(this.stateClasses.isExpanded);
+        this.closeButtonElement.classList.remove(this.stateClasses.isExpanded);
+
+        this.rootElement.animate([
+            {
+                maxHeight: `${pxToRem(scrollHeight)}rem`
+            },
+            {
+                maxHeight: `${pxToRem(maxHeight)}rem`
+            }
+        ], this.animationParams);
     }
 
     bindEvents() {
-        this.openButtonElement.addEventListener('click', this.onButtonClick);
-        this.closeButtonElement.addEventListener('click', this.onButtonClick);
+        this.openButtonElement.addEventListener('click', this.showFullCard);
+        this.closeButtonElement.addEventListener('click', this.hideFullCard);
     }
-
 }
 
 class ExpandableContentCollection {
@@ -95,10 +85,10 @@ class ExpandableContentCollection {
 
     init() {
         document.querySelectorAll(rootSelector).forEach(cardElement  => {
-            if (pxToRem(cardElement.getBoundingClientRect().height) > pxToRem(350)) {
-                // const rootElement = cardElement.querySelector('.review-card__feedback');
-                // new ExpandableContent(rootElement)
-                new ExpandableContent(cardElement)
+            const contentHeight = pxToRem(cardElement.scrollHeight);
+
+            if (contentHeight > pxToRem(maxAcceptableHeight)) {
+                const expandableCard = new ExpandableContent(cardElement);
             }
         })
     }

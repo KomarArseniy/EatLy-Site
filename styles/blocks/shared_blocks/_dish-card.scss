@@ -6,9 +6,15 @@
   row-gap: rem(10);
   padding: rem(20) rem(23);
   position: relative;
+  transition-duration: var(--transition-duration);
 
   @include mobile {
     padding: rem(12) rem(14);
+  }
+
+  @include hover {
+
+    transform: translateY(rem(-10));
   }
 
   &__like-button {

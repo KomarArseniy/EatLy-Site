@@ -10,12 +10,9 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--color-light);
-  //overflow-x: hidden;
+  overflow-x: hidden;
 }
 
-html {
-  //overflow: hidden;
-}
 
 main {
   flex-grow: 1;

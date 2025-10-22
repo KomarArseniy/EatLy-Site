@@ -40,16 +40,16 @@
 @use 'blocks/home_page/advantages-section/advantages.scss';
 @use 'blocks/home_page/purchases-section/purchases.scss';
 
-.header {
-  display: none !important;
-}
-
-.footer {
-  display: none !important;
-}
+//.header {
+//  display: none !important;
+//}
+//
+//.footer {
+//  display: none !important;
+//}
 
 .main > *:not(:last-child) {
-    display: none !important;
+    //display: none !important;
 }
 
 //!!! BUG WITH OVERLAY-MENU (HEADER)

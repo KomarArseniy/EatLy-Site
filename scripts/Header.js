@@ -21,14 +21,14 @@ class Header {
     }
 
     positionOverlayMenu() {
-        const rect = this.openBurgerMenuButtonElement.getBoundingClientRect();
-        const scrollX = document.documentElement.scrollLeft;
-        const scrollY = document.documentElement.scrollTop;
+        if (!this.openBurgerMenuButtonElement || !this.overlayElement) return;
 
-        // Позиционируем по правому нижнему углу кнопки
+        const buttonRect = this.openBurgerMenuButtonElement.getBoundingClientRect();
+        const scrollX = window.pageXOffset || document.documentElement.scrollLeft || 0;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
 
-        this.overlayElement.style.left = `${rect.right- this.overlayElement.getBoundingClientRect().width  + scrollX}px`;
-        this.overlayElement.style.top = `${rect.top + 30 + scrollY}px`;
+        this.overlayElement.style.left = `${buttonRect.right- this.overlayElement.getBoundingClientRect().width  + scrollX}px`;
+        this.overlayElement.style.top = `${buttonRect.bottom + 10}px`;
     }
 
     openBurgerMenu() {
@@ -57,13 +57,13 @@ class Header {
     onResize = () => {
         clearTimeout(this.resizeTimer);
 
-        // this.resizeTimer = setTimeout(() => {
+        this.resizeTimer = setTimeout(() => {
             this.positionOverlayMenu();
-        //
-        //     if (window.innerWidth >= 768) {
-        //         this.closeBurgerMenu();
-        //     }
-        // }, 300)
+
+            if (window.innerWidth >= 768) {
+                this.closeBurgerMenu();
+            }
+        }, 300)
     }
 
     onDocumentClick = () => {

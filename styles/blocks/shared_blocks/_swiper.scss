@@ -10,18 +10,20 @@
   --swiper-pagination-bullet-height: #{rem(15)};
   --swiper-pagination-bullet-horizontal-gap: #{rem(8)};
 
-  --swiper-min-height: #{rem(238)};
+  --swiper-slide-min-height: #{rem(238)};
   --swiper-active-slide-max-height: #{rem(350)};
   --swiper-active-slide-min-height: #{rem(350)};
 
   height: auto;
+  min-height: var(--swiper-active-slide-min-height); /* <-- Добавьте минимальную высоту всего свайпера */
+
 
   @include tablet {
     overflow: visible !important;
   }
 
   @include mobile {
-    --swiper-min-height: #{rem(200)};
+    --swiper-slide-min-height: #{rem(200)};
   }
 
   @include mobile-s {
@@ -30,12 +32,13 @@
 
   .swiper-pagination {
       left: 72% !important;
-      top: calc((var(--swiper-min-height)) + #{rem(10)}); ;
       transform: translateX(-50%) !important;
+      z-index: -1 !important;
 
       @include tablet {
         left: 50% !important;
         bottom: unset !important;
+        top: 100% !important;
         margin-top: rem(30);
       }
   }
@@ -45,9 +48,11 @@
     word-wrap: break-word !important ;
     text-align: center;
     opacity: 50%;
+    overflow: hidden;
 
     .review-card {
-      //max-height: var(--swiper-min-height);
+      max-height: var(--swiper-slide-min-height);
+      min-height: var(--swiper-slide-min-height);
       transition: max-height ease var(--local-transition-duration),
       opacity ease var(--local-transition-duration),
       min-height ease var(--local-transition-duration) !important;
@@ -66,6 +71,7 @@
     &-active {
       opacity: 1;
       .review-card {
+        max-height: unset;
         min-height: var(--swiper-active-slide-min-height);
         &__body {
           color: #636363  ;
@@ -80,6 +86,8 @@
 
     &:not(.swiper-slide-active) {
       .review-card {
+        max-height: var(--swiper-slide-min-height);
+        min-height: var(--swiper-slide-min-height);
         &__body {
           translate: 0 calc(-1 * #{rem(100)});
         }
@@ -92,6 +100,10 @@
             translate: 0 calc(-1 * #{rem(50)});
           }
         }
+      }
+
+      .expandable-content__button {
+        pointer-events: none;
       }
     }
   }

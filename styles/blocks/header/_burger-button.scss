@@ -7,6 +7,10 @@
   position: relative;
   cursor: pointer;
 
+  @include mobile-s {
+    @include square(rem(20));
+  }
+
   &__line {
     border-radius: rem(15);
     padding: rem(3);

@@ -14,7 +14,7 @@
 
   @keyframes scrolling-header {
     to {
-      box-shadow: 0 0 1rem 0 var(--color-dark);
+      box-shadow: 0 0 1rem 1px var(--color-dark);
     }
   }
 
@@ -24,6 +24,17 @@
     align-items: center;
     column-gap: rem(103);
     border-bottom: var(--border-gray);
+
+    animation-name: hide-border;
+    animation-fill-mode: both;
+    animation-timeline: scroll();
+    animation-range: rem(100) rem(200);
+
+    @keyframes hide-border {
+      to {
+        border-bottom-color: transparent;
+      }
+    }
 
     @include tablet {
       padding-bottom: rem(17);
@@ -131,11 +142,15 @@
     background-color: var(--color-white);
     border: var(--border-gray);
     border-radius: 1rem;
-    @include square(rem(150));
+    @include square(rem(165));
     transition-duration: var(--transition-duration);
 
     @include mobile-above {
       @include hide;
+    }
+
+    @include mobile-s {
+      @include square(rem(145));
     }
 
     &:not(.is-active) {
@@ -148,10 +163,19 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      row-gap: rem(12);
+      row-gap: rem(8);
+
+      @include mobile-s {
+        row-gap: rem(5);
+      }
 
       &-link {
         width: 70%;
+        padding: rem(10);
+
+        @include mobile-s {
+          padding: rem(8);
+        }
       }
     }
 

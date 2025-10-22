@@ -42,10 +42,15 @@
     flex-direction: column;
     padding: rem(45) rem(40);
     row-gap: rem(35);
+    transition-duration: var(--transition-duration);
 
     @include mobile {
       align-self: center;
       max-width: rem(550);
+    }
+
+    @include hover {
+      scale: 1.02;
     }
 
     &-header {
