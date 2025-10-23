@@ -2,7 +2,7 @@ import pxToRem from './utils/pxToRem.js'
 
 const rootSelector = '.review-card';
 const maxHeight = 120;
-const maxAcceptableHeight = 300;
+const maxAcceptableHeight = 270;
 
 class ExpandableContent {
     selectors = {
@@ -26,10 +26,10 @@ class ExpandableContent {
         this.rootElement.classList.add(`${this.selectors.root}`);
         this.rootElement.innerHTML +=
             ' <button type="button" class="button expandable-content__button expandable-content__button--open">' +
-            ' <span class="icon icon--bottom-accent-arrow">Read More</span>' +
+            ' <span class="icon icon--bottom-arrow">Read More</span>' +
             ' </button>' +
             '<button type="button" class="button expandable-content__button expandable-content__button--close">' +
-            '<span class="icon icon--top-accent-arrow">Roll Up</span>' +
+            '<span class="icon icon--top-arrow">Roll Up</span>' +
             '</button>';
 
         this.openButtonElement = this.rootElement.querySelector(`.${this.selectors.openButton}`);

@@ -6,6 +6,11 @@
   row-gap: rem(80);
   align-items: center;
 
+  @include mobile {
+
+    padding-bottom: rem(50);
+  }
+
   &__reviews-wrapper {
     width: 100%;
     display: flex;

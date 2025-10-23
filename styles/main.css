@@ -1012,8 +1012,11 @@ button[aria-label]::before {
 .icon--white-arrow::after {
   background-image: url("../../../icons/white-arrow.svg");
 }
-.icon--bottom-accent-arrow::after {
+.icon--bottom-arrow::after {
   background-image: url("../../../icons/arrow-bottom.svg");
+}
+.icon--top-arrow::after {
+  background-image: url("../../../icons/arrow-top.svg");
 }
 .icon--gray-arrow::after {
   background-image: url("../../../icons/gray-arrow.svg");
@@ -1968,6 +1971,11 @@ button[aria-label]::before {
   flex-direction: column;
   row-gap: 5rem;
   align-items: center;
+}
+@media (width <= 47.99875rem) {
+  .swiper-section {
+    padding-bottom: 3.125rem;
+  }
 }
 .swiper-section__reviews-wrapper {
   width: 100%;

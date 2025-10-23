@@ -28,9 +28,15 @@
     }
   }
 
-  &--bottom-accent-arrow {
+  &--bottom-arrow {
     &::after {
       background-image: url('../../../icons/arrow-bottom.svg');
+    }
+  }
+
+  &--top-arrow {
+    &::after {
+      background-image: url('../../../icons/arrow-top.svg');
     }
   }
 
