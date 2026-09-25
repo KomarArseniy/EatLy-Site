@@ -1,0 +1,26 @@
+import type { SVGProps } from 'react';
+
+export function ProfileIcon(props: SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="22"
+            height="27"
+            viewBox="0 0 22 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            {...props}
+        >
+            <path
+                d="M11 11C13.7614 11 16 8.76142 16 6C16 3.23858 13.7614 1 11 1C8.23858 1 6 3.23858 6 6C6 8.76142 8.23858 11 11 11Z"
+                stroke="currentColor"
+                strokeWidth="1.875"
+            />
+            <path
+                d="M21 20.375C21 23.4812 21 26 11 26C1 26 1 23.4812 1 20.375C1 17.2688 5.4775 14.75 11 14.75C16.5225 14.75 21 17.2688 21 20.375Z"
+                stroke="currentColor"
+                strokeWidth="1.875"
+            />
+        </svg>
+    );
+}
